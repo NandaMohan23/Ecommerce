@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruelle - Cart</title>
+    <link rel="stylesheet" href="cart.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1>Ruelle</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">Orders</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="cart-section">
+      <h2>Your Shopping Cart</h2>
+      <div id="cartItems"></div>
+    </section>
+
+    <footer class="cart-footer">
+      <div class="footer-content">
+        <div class="footer-total">
+          <div class="cart-total">
+            <h3 id="CartTotal">Total: ₹0.00</h3>
+          </div>
+        </div>
+        <button onclick="proceedToOrder()" class="buy-now-btn">Buy Now</button>
+      </div>
+    </footer>
+
+    <script>
+      function formatIndianPrice(price) {
+        return new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+          maximumFractionDigits: 0,
+        }).format(price);
+      }
+
+      function displayCartItems() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cartItems");
+        const cartTotalElement = document.getElementById("CartTotal");
+        cartItemsContainer.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item) => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+
+          const cartItem = document.createElement("div");
+          cartItem.classList.add("cart-item");
+          cartItem.innerHTML = `
+                <img src="${item.image}" alt="${
+            item.name
+          }" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>${item.name}</h3>
+                    <p>Unit Price: ${formatIndianPrice(item.price)}</p>
+                    <div class="quantity-controls">
+                        <button onclick="updateQuantity('${
+                          item.name
+                        }', -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity('${
+                          item.name
+                        }', 1)">+</button>
+                    </div>
+                    <p class="item-total">Subtotal: ${formatIndianPrice(
+                      itemTotal
+                    )}</p>
+                </div>
+            `;
+          cartItemsContainer.appendChild(cartItem);
+        });
+
+        cartTotalElement.textContent = `Cart Total: ${formatIndianPrice(
+          total
+        )}`;
+      }
+
+      function updateQuantity(productName, change) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const productIndex = cart.findIndex(
+          (item) => item.name === productName
+        );
+
+        if (productIndex !== -1) {
+          const newQuantity = cart[productIndex].quantity + change;
+          if (newQuantity > 0) {
+            cart[productIndex].quantity = newQuantity;
+            localStorage.setItem("cart", JSON.stringify(cart));
+          } else {
+            cart.splice(productIndex, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+          }
+          displayCartItems();
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", displayCartItems);
+
+      // ...existing code...
+
+      
+      function proceedToOrder() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        if (cart.length === 0) {
+          Swal.fire({
+            title: "Empty Cart",
+            text: "Please add items to cart before proceeding",
+            icon: "warning",
+            confirmButtonColor: "#8b7355",
+          });
+          return;
+        }
+
+        const total = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+
+        Swal.fire({
+          title: "✨ Proceed to Checkout",
+          html: `
+              <div class="custom-swal">
+                  <h3 style="color:#8b7355; margin:15px 0;">Cart Summary</h3>
+                  <p style="color:#8b7355;">Total Items: ${cart.length}</p>
+                  <p style="color:#8b7355; font-size:1.2em;">Total Amount: ${formatIndianPrice(
+                    total
+                  )}</p>
+              </div>
+          `,
+          showCancelButton: true,
+          confirmButtonColor: "#8b7355",
+          cancelButtonColor: "#f6b25f",
+          confirmButtonText: "Continue to Payment",
+          cancelButtonText: "Keep Shopping",
+          customClass: {
+            popup: "animated-popup",
+          },
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Store current cart as order
+            localStorage.setItem("currentOrder", JSON.stringify(cart));
+            // Redirect to orders page
+            window.location.href = "orders.html";
+          }
+        });
+      }
+      function calculateTotal(cart) {
+        return cart.reduce(
+          (total, item) => total + item.price * item.quantity,
+          0
+        );
+      }
+
+      // Initialize cart display
+      document.addEventListener("DOMContentLoaded", displayCartItems);
+
+      function displayOrderItems() {
+        const orderItems =
+          JSON.parse(localStorage.getItem("currentOrder")) || [];
+        const orderSummary = document.getElementById("orderSummary");
+        let total = 0;
+
+        if (orderItems.length === 0) {
+          window.location.href = "cart.html";
+          return;
+        }
+
+        const itemsHTML = orderItems
+          .map((item) => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            return `
+                <div class="order-item">
+                    <img src="${item.image}" alt="${
+              item.name
+            }" class="order-item-image">
+                    <div class="order-item-details">
+                        <h3>${item.name}</h3>
+                        <p>Price: ${formatIndianPrice(item.price)}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                        <p class="item-total">Subtotal: ${formatIndianPrice(
+                          itemTotal
+                        )}</p>
+                    </div>
+                </div>
+            `;
+          })
+          .join("");
+
+        orderSummary.innerHTML = `
+            <h2>Order Summary</h2>
+            ${itemsHTML}
+            <div class="order-total">
+                <h3>Total Amount: ${formatIndianPrice(total)}</h3>
+            </div>
+        `;
+      }
+
+      document.addEventListener("DOMContentLoaded", displayOrderItems);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: white;
+  color: #6b5a45;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  position: sticky;
+  height: 50px;
+  width-x: 91%;
+  width-y: 91%;
+  top: 10px;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #000 !important;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color:#f6b25f;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f6b25f;
+  font-weight: bold;
+}
+
+.collections-section {
+  text-align: center;
+  height:2000px;
+  padding: 40px;
+}
+
+.collection-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.collection-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.collection-item:hover {
+  transform: scale(1.05);
+}
+
+.collection-item img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.custom-swal {
+  padding: 20px;
+  text-align: center;
+}
+
+.swal2-popup {
+  border: 2px solid #8b7355 !important;
+  border-radius: 15px !important;
+}
+
+.swal2-title {
+  color: #8b7355 !important;
+  font-family: 'Cinzel', serif !important;
+}
+
+.swal2-actions button {
+  font-family: 'Playfair Display', serif !important;
+  border-radius: 5px !important;
+  padding: 12px 24px !important;
+}
+
+.btn {
+  background-color: #8b7355;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #d9953d;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #8b7355;
+  color: white;
+}

@@ -1,0 +1,168 @@
+<!-- filepath: /Users/varunsahukar/ecommerce/signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Ruelle</title>
+    <style>
+      /* General Styles */
+body {
+  font-family: "Playfair Display", serif;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #8b7355;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6b5a45;
+}
+
+/* Auth Container */
+.auth-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container p {
+  font-size: 14px;
+  color: #333;
+}
+
+.auth-container a {
+  color: #8b7355;
+  transition: color 0.3s ease;
+}
+
+.auth-container a:hover {
+  color: #6b5a45;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #8b7355;
+}
+
+.terms-checkbox label {
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.terms-checkbox a {
+  color: #8b7355;
+  text-decoration: underline;
+}
+
+.terms-checkbox a:hover {
+  color: #6b5a45;
+}
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Sign Up</h2>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="confirm Password" required>
+
+            <div class="terms-checkbox">
+              <input type="checkbox" id="terms" name="terms" required>
+              <label for="terms">I agree to the <a href="#" onclick="showTerms(event)">Terms and Conditions</a></label>
+          </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+    <!-- filepath: /Users/varunsahukar/ecommerce/sign.html -->
+<script>
+  function showTerms(event) {
+      event.preventDefault();
+      Swal.fire({
+          title: 'Terms and Conditions',
+          html: `
+              <div class="terms-content" style="text-align: left; padding: 20px;">
+                  <h3>1. Acceptance of Terms</h3>
+                  <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                  
+                  <h3>2. Privacy Policy</h3>
+                  <p>Your use of our website is also subject to our Privacy Policy.</p>
+                  
+                  <h3>3. User Account</h3>
+                  <p>You are responsible for maintaining the confidentiality of your account and password.</p>
+              </div>
+          `,
+          confirmButtonColor: '#8b7355',
+          confirmButtonText: 'I Understand',
+          width: '600px',
+          customClass: {
+              container: 'terms-modal'
+          }
+      });
+  }
+  </script>
+  
+  <!-- Add SweetAlert2 CDN in head -->
+  <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default@4/default.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruelle - Collections</title>
+    <link rel="stylesheet" href="collections.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1>Ruelle</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#collections">collections</a></li>
+          <li><a href="cart.html">cart</a></li>
+          <li><a href="orders.html">orders</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="collections" class="collections-section">
+      <h2>Our Exclusive Collections</h2>
+      <div class="collection-grid">
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/39/aa/b3/39aab32ea5a5a830ce683bdc7a773e4d.jpg"
+            alt="Vintage Elegance"
+          />
+          <h3>Vintage Elegance</h3>
+          <p>11,199</p>
+          <button class="btn" onclick="addToCart('Vintage Elegance', this.parentElement.querySelector('img').src, 11199)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Vintage Elegance', this.parentElement.querySelector('img').src,11199)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/ff/a7/f8/ffa7f87f9aec39fd71c413d43241612e.jpg"
+            alt="Luxury Redefined"
+          />
+          <h3>Luxury Redefined</h3>
+          <p>16,199</p>
+          <button class="btn" onclick="addToCart('Luxury Redefined', this.parentElement.querySelector('img').src, 16199)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Luxury Redefined', this.parentElement.querySelector('img').src,16199)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/93/f8/55/93f855672176b41941692731245326ef.jpg"
+            alt="Exclusive Designs"
+          />
+          <h3>Exclusive Designs</h3>
+          <p>14,199</p>
+          <button class="btn" onclick="addToCart('Exclusive Designs', this.parentElement.querySelector('img').src,14199)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Exclusive Designs', this.parentElement.querySelector('img').src,14199)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/d0/9a/1d/d09a1dec84697a7a263fd04027e3ebac.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Handmade Designs</h3>
+          <p>13,199</p>
+          <button class="btn" onclick="addToCart('Handmade Designs', this.parentElement.querySelector('img').src,13199)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Handmade Designs', this.parentElement.querySelector('img').src, 13199)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Royal Heritage</h3>
+          <p>15,199</p>
+          <button class="btn" onclick="addToCart('Royal Heritage', this.parentElement.querySelector('img').src,15199)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Royal Heritage', this.parentElement.querySelector('img').src, 15199)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/af/f1/bc/aff1bca965b4855696dd2c0c4d1d49e5.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Artisan Touch</h3>
+          <p>19,999</p>
+          <button class="btn" onclick="addToCart('Artisan Touch', this.parentElement.querySelector('img').src,19999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Artisan Touc', this.parentElement.querySelector('img').src, 19999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/ea/02/7f/ea027f2908d1181e9e5fb5774270e5ec.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Golden Grace</h3>
+          <p>19,199</p>
+          <button class="btn" onclick="addToCart('Golden Grace', this.parentElement.querySelector('img').src,19199)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Golden Grace', this.parentElement.querySelector('img').src, 19199)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/ce/6b/9a/ce6b9ae3ab63459e1764c25b203ae8b0.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Opulent Charm</h3>
+          <p>13,199</p>
+          <button class="btn" onclick="addToCart('Opulent Charm', this.parentElement.querySelector('img').src,13199)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Opulent Charm', this.parentElement.querySelector('img').src, 13199)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Timeless Tradition</h3>
+          <p>18,999</p>
+          <button class="btn" onclick="addToCart('Timeless Tradition', this.parentElement.querySelector('img').src,18999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Timeless Tradition', this.parentElement.querySelector('img').src, 18999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Regal Affair</h3>
+          <p>18,999</p>
+          <button class="btn" onclick="addToCart('Regal Affair', this.parentElement.querySelector('img').src,18999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Regal Affair', this.parentElement.querySelector('img').src, 18999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Majestic Drape</h3>
+          <p>17,699</p>
+          <button class="btn" onclick="addToCart('Majestic Drape', this.parentElement.querySelector('img').src,17699)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Majestic Drape', this.parentElement.querySelector('img').src, 17699)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Classic Prestige</h3>
+          <p>29,999</p>
+          <button class="btn" onclick="addToCart('Classic Prestige', this.parentElement.querySelector('img').src,29999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Classic Prestige', this.parentElement.querySelector('img').src, 29999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Haute Heritage</h3>
+          <p>9,999</p>
+          <button class="btn" onclick="addToCart('Haute Heritage', this.parentElement.querySelector('img').src,9999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Haute Heritage', this.parentElement.querySelector('img').src, 9999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Pearl Perfection</h3>
+       <p>18,999</p>
+          <button class="btn" onclick="addToCart('Pearl Perfection', this.parentElement.querySelector('img').src,18999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Pearl Perfection', this.parentElement.querySelector('img').src, 18999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Midnight Mystique</h3>
+          <p>9,999</p>
+          <button class="btn" onclick="addToCart('Midnight Mystique', this.parentElement.querySelector('img').src,9999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Midnight Mystique', this.parentElement.querySelector('img').src, 9999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Imperial Majesty</h3>
+          <p>17,999</p>
+          <button class="btn" onclick="addToCart('Imperial Majesty', this.parentElement.querySelector('img').src,17999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Imperial Majesty', this.parentElement.querySelector('img').src, 17999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Ethereal Grace</h3>
+          <p>14,999</p>
+          <button class="btn" onclick="addToCart('Ethereal Grace', this.parentElement.querySelector('img').src,14999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Ethereal Grace', this.parentElement.querySelector('img').src, 14999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Velvet Allure</h3>
+          <p>15,999</p>
+          <button class="btn" onclick="addToCart('Velvet Allure', this.parentElement.querySelector('img').src,15999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Velvet Allure', this.parentElement.querySelector('img').src, 15999)">Buy Now</button>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Victorian Poise</h3>
+          <p>19,999</p>
+          <button class="btn" onclick="addToCart('Victorian Poise', this.parentElement.querySelector('img').src,19999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Victorian Poise', this.parentElement.querySelector('img').src, 19999)">Buy Now</button>
+      </div>
+        </div>
+        <div class="collection-item">
+          <img
+            src="https://i.pinimg.com/736x/eb/5b/9b/eb5b9bc24a0661f0b9e5ae54750296bd.jpg"
+            alt="Handmade Designs"
+          />
+          <h3>Baroque Beauty</h3>
+          <p>21,999</p>
+          <button class="btn" onclick="addToCart('Baroque Beauty', this.parentElement.querySelector('img').src,21999)">Add to Cart</button>
+          <button class="btn" onclick="buyNowAndRedirect('Baroque Beauty', this.parentElement.querySelector('img').src, 21999)">Buy Now</button>
+      </div>
+    </section>
+
+    <<script>
+      function formatIndianPrice(price) {
+        return new Intl.NumberFormat('en-IN', {
+            style: 'currency',
+            currency: 'INR',
+            maximumFractionDigits: 0
+        }).format(price);
+    }
+    
+    function buyNowAndRedirect(productName, productImage, productPrice) {
+        try {
+            // Create order object
+            const orderItem = {
+                name: productName,
+                image: productImage,
+                price: productPrice,
+                quantity: 1
+            };
+    
+            // Store in localStorage
+            localStorage.setItem('currentOrder', JSON.stringify([orderItem]));
+    
+            Swal.fire({
+                title: '✨ Instant Purchase',
+                html: `
+                    <div class="custom-swal">
+                        <img src="${productImage}" alt="${productName}" 
+                            style="width:200px; height:250px; object-fit:cover; border-radius:8px; margin-bottom:15px;">
+                        <h3 style="color:#8b7355; margin:15px 0; font-family:'Cinzel',serif;">${productName}</h3>
+                        <p style="color:#8b7355; font-size:1.2em; margin:10px 0;">Price: ${formatIndianPrice(productPrice)}</p>
+                        <p style="color:#f6b25f; font-size:0.9em;">Quantity: 1</p>
+                    </div>
+                `,
+                background: '#fff',
+                showCancelButton: true,
+                confirmButtonColor: '#8b7355',
+                cancelButtonColor: '#f6b25f',
+                confirmButtonText: 'Proceed to Checkout',
+                cancelButtonText: 'Continue Shopping',
+                customClass: {
+                    popup: 'animated-popup',
+                    title: 'custom-title',
+                    confirmButton: 'custom-confirm',
+                    cancelButton: 'custom-cancel'
+                },
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'orders.html';
+                }
+            });
+        } catch (error) {
+            console.error('Error in buyNowAndRedirect:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Something went wrong. Please try again.',
+                icon: 'error',
+                confirmButtonColor: '#8b7355'
+            });
+        }
+    }
+      function addToCart(productName, productImage, productPrice) {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const existingProductIndex = cart.findIndex(item => item.name === productName);
+          
+          if (existingProductIndex !== -1) {
+              cart[existingProductIndex].quantity += 1;
+          } else {
+              cart.push({ 
+                  name: productName, 
+                  image: productImage, 
+                  price: productPrice, 
+                  quantity: 1 
+              });
+          }
+          
+          localStorage.setItem('cart', JSON.stringify(cart));
+      
+          Swal.fire({
+              title: '🛍️ Added to Cart',
+              html: `
+                  <div class="custom-swal">
+                      <img src="${productImage}" alt="${productName}" 
+                          style="width:200px; height:250px; object-fit:cover; border-radius:8px; margin-bottom:15px;">
+                      <h3 style="color:#8b7355; margin:15px 0; font-family:'Cinzel',serif;">${productName}</h3>
+                      <p style="color:#8b7355; font-size:1.2em; margin:10px 0;">Price: ${formatIndianPrice(productPrice)}</p>
+                      <p style="color:#f6b25f; font-size:0.9em;">Successfully added to your cart</p>
+                  </div>
+              `,
+              background: '#fff',
+              showCancelButton: true,
+              confirmButtonColor: '#8b7355',
+              cancelButtonColor: '#f6b25f',
+              confirmButtonText: 'View Cart',
+              cancelButtonText: 'Continue Shopping',
+              customClass: {
+                  popup: 'animated-popup',
+                  title: 'custom-title',
+                  confirmButton: 'custom-confirm',
+                  cancelButton: 'custom-cancel'
+              },
+              showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+              }
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  window.location.href = 'cart.html';
+              }
+          });
+      }
+      </script>
+      
+      <style>
+      .animated-popup {
+          border: 2px solid #8b7355 !important;
+          border-radius: 15px !important;
+      }
+      
+      .custom-title {
+          color: #8b7355 !important;
+          font-family: 'Cinzel', serif !important;
+          font-size: 1.5em !important;
+      }
+      
+      .custom-confirm, .custom-cancel {
+          font-family: 'Playfair Display', serif !important;
+          padding: 12px 24px !important;
+          font-size: 1.1em !important;
+      }
+      
+      .custom-swal {
+          padding: 20px;
+          text-align: center;
+      }
+      </style>
+      
+  </body>
+</html>

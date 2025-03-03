@@ -1,0 +1,248 @@
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: white;
+  color: #6b5a45;
+  margin: 0;
+  padding-top: 110px; /* Added to account for fixed header */
+}
+
+.header {
+  background-color: #000;
+  height: 70px;
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 20px;
+  margin-top: 0;
+  font-size: 18px;
+  color: #f6b25f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f6b25f;
+  font-weight: bold;
+}
+
+.cart-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantity-controls button {
+  background-color: #8b7355;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item-total {
+  color: #8b7355;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#cartTotal {
+  text-align: right;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #8b7355;
+}
+
+.btn {
+  background-color: #8b7355;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #d9953d;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #8b7355;
+  color: white;
+}
+.footer p {
+  color: white;
+  text-decoration: none;
+  padding-top:10px;
+  margin:20px;
+
+}
+
+
+.cart-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-total {
+    font-size: 1.2em;
+    color: #8b7355;
+}
+
+.footer-total span:first-child {
+    margin-right: 10px;
+}
+
+.buy-now-btn {
+    background-color: #8b7355;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now-btn:hover {
+    background-color: #6b5a45;
+}
+
+.cart-section {
+    margin-bottom: 100px;
+}
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.item-checkbox {
+  margin-right: 15px;
+}
+
+.item-checkbox input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.select-all {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8b7355;
+}
+.card-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.card-input-group {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.card-input:focus {
+  outline: none;
+  border-color: #8b7355;
+}
+
+.order-summary {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.order-total {
+  text-align: right;
+  padding: 15px;
+  border-top: 2px solid #8b7355;
+  color: #8b7355;
+  font-weight: bold;
+}
